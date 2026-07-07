@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Sioux Watch Café</title>
+  <script src="/nav.js" defer></script>
+  <script src="/meetings.js" defer></script>
+  <style>
+    :root{
+      --bg:#121215; --card:#1c1c21; --card2:#202026; --border:#33333c;
+      --accent:#d96a41; --accent-d:#c25a36; --banner:#b06a4a;
+      --ink:#e9e7e2; --muted:#a09da6;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased}
+
+    header{text-align:center;padding:44px 20px 36px}
+    h1{color:var(--accent);margin:22px 0 8px;font-size:clamp(26px,4.5vw,38px);letter-spacing:.3px}
+    header p{color:var(--muted);font-size:16px;margin:0}
+
+    main{max-width:900px;margin:0 auto 60px;padding:0 16px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:30px 32px;box-shadow:0 10px 40px rgba(0,0,0,.45)}
+    @media(max-width:560px){.card{padding:22px 18px}}
+    h2{color:var(--accent);margin:34px 0 14px;font-size:20px}
+    h2:first-child{margin-top:0}
+    p{line-height:1.65}
+
+    .date-box{background:var(--banner);border-left:6px solid var(--accent);padding:18px;font-size:1.1rem;border-radius:8px;color:#fff;margin:6px 0 8px}
+    .date-box .nm{margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.25);font-size:1rem}
+    .date-box .nm b{font-variant-numeric:tabular-nums;font-family:Consolas,"Courier New",monospace;font-size:1.05rem}
+
+    /* tools grid */
+    .tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:6px}
+    .tool{display:block;background:var(--card2);border:1px solid var(--border);border-radius:14px;padding:20px;
+      text-decoration:none;color:var(--ink);transition:border-color .15s, transform .15s}
+    .tool:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .tool .icon{font-size:26px;margin-bottom:10px;display:block;color:var(--accent)}
+    .tool b{display:block;font-size:16px;margin-bottom:6px}
+    .tool span{color:var(--muted);font-size:13.5px;line-height:1.5;display:block}
+    .tool .go{color:var(--accent);font-size:13px;font-weight:600;margin-top:12px;display:inline-block}
+
+    ul{line-height:1.8;padding-left:22px}
+    .cafe-log{background:var(--card2);border-left:6px solid var(--accent);padding:18px;font-size:1rem;border-radius:8px;color:var(--ink);margin-bottom:18px;line-height:1.6}
+    .cafe-log strong{color:var(--accent)}
+
+    footer{margin-top:50px;text-align:center;padding:25px;color:#8f8c96;font-size:14px}
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>The Sioux Watch Café</h1>
+  <p>A relaxed gathering for Sioux colleagues who like watches.</p>
+</header>
+
+<main>
+  <div class="card">
+    <h2>Welcome!</h2>
+    <p>
+      The Sioux Watch Café is an informal meet-up for watch enthusiasts from Sioux.
+      Join us for relaxed conversations about all aspects of horology—from mechanical
+      movements and complications to design, materials, diving watches, chronographs,
+      and the stories behind unique timepieces.
+    </p>
+
+    <h2>Next Café Date</h2>
+    <div class="date-box">
+      The Sioux Watch Café is every last Friday of the month at <strong>Labs</strong> during the Vrijmibo.
+      <div class="nm">Only <b data-countdown-nights>&hellip;</b> of sleep till <b data-countdown-date>&hellip;</b></div>
+    </div>
+
+    <h2>Our Tools</h2>
+    <div class="tools">
+      <a class="tool" href="/clock/">
+        <span class="icon">&#9202;</span>
+        <b>Live Clock</b>
+        <span>A big LED reference clock on Amsterdam time — with an optional soft tick every 10 seconds.</span>
+        <span class="go">Open the clock &rarr;</span>
+      </a>
+      <a class="tool" href="/watchrate/">
+        <span class="icon">&#9201;</span>
+        <b>Watch Rate Meter</b>
+        <span>Measure how many seconds per day your watch runs fast or slow, with charts and measurement history.</span>
+        <span class="go">Start measuring &rarr;</span>
+      </a>
+      <a class="tool" href="/watchrate/viewer.html">
+        <span class="icon">&#9201;</span>
+        <b>Backup Viewer</b>
+        <span>Load your Rate Meter backup files and browse rates, positions and offset traces per watch.</span>
+        <span class="go">Open the viewer &rarr;</span>
+      </a>
+      <a class="tool" href="/glossary/">
+        <span class="icon">&#9998;</span>
+        <b>Glossary</b>
+        <span>Watch and timegrapher terms explained in plain language, in English and Dutch.</span>
+        <span class="go">Browse the terms &rarr;</span>
+      </a>
+    </div>
+
+    <h2>Topics We Explore</h2>
+    <ul>
+      <li>Movement technology &amp; craftsmanship</li>
+      <li>Dive watches and underwater engineering</li>
+      <li>Chronographs and other complications</li>
+      <li>Watch design, materials, and aesthetics</li>
+      <li>Maintenance, straps, and daily-use tips</li>
+      <li>Collecting stories and iconic models</li>
+    </ul>
+
+    <p>
+      Everyone is welcome — whether you're a seasoned collector or simply curious.
+      Grab a drink, enjoy the atmosphere, and talk time with fellow Sioux watch fans!
+    </p>
+
+    <div id="cafeLogSec" style="display:none">
+      <h2>Previous Café Dates</h2>
+      <div id="cafeLog"></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  © 2026 The Sioux Watch Café — Created by and for Sioux colleagues - info@watchcafe.eu
+</footer>
+
+<script>
+(function(){
+  fetch('/cafe-log.txt',{cache:'no-store'}).then(function(r){
+    if(!r.ok) throw 0; return r.text();
+  }).then(function(txt){
+    var lines = txt.split(/\r?\n/).filter(function(l){ return l.trim().charAt(0) !== '#'; });
+    var blocks = lines.join('\n').split(/\n\s*---+\s*\n/).map(function(b){ return b.trim(); }).filter(Boolean);
+    if(!blocks.length) return;
+    function esc(t){ return t.replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+    var box = document.getElementById('cafeLog');
+    box.innerHTML = blocks.map(function(b){
+      var i = b.indexOf('\n');
+      var title = i < 0 ? b : b.slice(0, i);
+      var body  = i < 0 ? '' : b.slice(i + 1).trim();
+      return '<div class="cafe-log"><strong>' + esc(title) + '</strong>' +
+             (body ? '<br>' + esc(body).replace(/\n/g, '<br>') : '') + '</div>';
+    }).join('');
+    document.getElementById('cafeLogSec').style.display = '';
+  }).catch(function(){ /* geen logbestand: sectie blijft verborgen */ });
+})();
+</script>
+</body>
+</html>
